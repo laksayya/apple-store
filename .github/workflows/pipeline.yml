@@ -29,7 +29,9 @@ jobs:
       run: |
         branch=${GITHUB_REF#refs/heads/}
         case ${branch} in
-          dev) aws s3 sync ./ s3://caniprjs/apple-store/dev --exact-timestamps --delete;
-          main) aws s3 sync ./ s3://caniprjs/apple-store/main --exact-timestamps --delete;
+          dev) aws s3 sync ./ s3://caniprjs/apple-store/dev --exact-timestamps --delete
+            ;;
+          main) aws s3 sync ./ s3://caniprjs/apple-store/main --exact-timestamps --delete
+            ;;
         esac
         
